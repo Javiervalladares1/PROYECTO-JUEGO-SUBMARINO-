@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment1.params=
+comment1.target=MyWorld()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=x\ y\ distanciaMinima
+comment3.target=boolean\ distanciaMinimaEntrePezYBasura(int,\ int,\ int)
+comment4.params=
+comment4.target=void\ prepararMusica()
+comment5.params=
+comment5.target=void\ stopped()
+numComments=6

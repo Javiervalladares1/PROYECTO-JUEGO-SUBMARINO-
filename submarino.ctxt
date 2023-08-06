@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=submarino
+comment1.params=
+comment1.target=submarino()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moverSubmarino()
+comment4.params=
+comment4.target=void\ recogerBasura()
+comment5.params=
+comment5.target=void\ detectarPez()
+comment6.params=
+comment6.target=void\ actualizarEtiqueta()
+comment7.params=
+comment7.target=void\ perdiste()
+comment8.params=
+comment8.target=void\ verificarFelicitaciones()
+numComments=9
