@@ -58,7 +58,7 @@ public class submarino extends Actor {
     }
 
     private void perdiste() {
-        Greenfoot.delay(1000); // Agrega un pequeño retraso para que el jugador pueda leer el mensaje "Perdiste"
+        Greenfoot.delay(100); // Agrega un pequeño retraso para que el jugador pueda leer el mensaje "Perdiste"
         Greenfoot.setWorld(new MyWorld()); // Reiniciar el juego creando un nuevo mundo
     }
     private void verificarFelicitaciones()

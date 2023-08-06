@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=basura1
-comment0.text=\n\ Write\ a\ description\ of\ class\ basura1\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=basura1()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ basura1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=
+comment3.target=void\ mover()
+comment4.params=
+comment4.target=void\ cambiarDireccionY()
+numComments=5

@@ -1,27 +1,42 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class basura1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class basura1 extends Actor
 {
-    /**
-     * Act - do whatever the basura1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int direccionY = 1; // 1 para abajo, -1 para arriba
+
     public basura1()
     {
         GreenfootImage imagen1 = getImage();
-        int nuevoAncho = imagen1.getWidth()*2;
-        int nuevoAlto = imagen1.getHeight()*2;
+        int nuevoAncho = imagen1.getWidth() * 2;
+        int nuevoAlto = imagen1.getHeight() * 2;
         imagen1.scale(60, 60);
         setImage(imagen1);
     }
+
     public void act()
     {
-        // Add your action code here.
+        mover();
+    }
+
+    private void mover()
+    {
+        int margen = 50; // Margen de distancia desde el borde
+        int worldHeight = getWorld().getHeight();
+        int y = getY();
+
+        if (y <= margen || y >= worldHeight - margen) {
+            cambiarDireccionY();
+        }
+
+        setLocation(getX(), y + (4 * direccionY));
+    }
+
+    private void cambiarDireccionY()
+    {
+        direccionY *= -1;
     }
 }
+
+
+
+
