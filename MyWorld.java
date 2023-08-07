@@ -3,8 +3,8 @@ import greenfoot.*;
 public class MyWorld extends World
 {
     private GreenfootSound musicaFondo;
-    //private int tiempoInstrucciones = 1;
-    //private int contTiempo = 0;
+    private boolean instruccionesMostradas = false;
+
     public MyWorld()
     {    
         super(800, 600, 1);
@@ -19,7 +19,7 @@ public class MyWorld extends World
         addObject(sub, 100, 100);
 
         // Agrega 10 objetos "basura" dispersos por el mapa
-        int numeroBasuras = 10; // Cantidad de objetos "basura" que deseas agregar
+        int numeroBasuras = 10;
         for (int i = 0; i < numeroBasuras; i++)
         {
             int x = Greenfoot.getRandomNumber(getWidth());
@@ -27,9 +27,9 @@ public class MyWorld extends World
             addObject(new basura1(), x, y);
         }
 
-        // Agrega 5 objetos "pez" dispersos por el mapa
-        int numeroPeces = 8; // Cantidad de objetos "pez" que deseas agregar
-        int distanciaMinima = 100; // Distancia mínima entre los objetos "pez" y "basura"
+        // Agrega 8 objetos "pez" dispersos por el mapa
+        int numeroPeces = 8;
+        int distanciaMinima = 100;
 
         for (int i = 0; i < numeroPeces; i++)
         {
@@ -42,8 +42,6 @@ public class MyWorld extends World
             }
             else
             {
-                // Si la posición del objeto "pez" está demasiado cerca de los objetos "basura",
-                // busca otra posición aleatoria.
                 i--;
             }
         }
@@ -51,22 +49,47 @@ public class MyWorld extends World
         // Agrega la etiqueta de contador al mundo
         CONTADOR etiquetaContador = new CONTADOR();
         addObject(etiquetaContador, 500, 50);
-        //mostrarInstrucciones();
     }
-    /*
+    
     private void mostrarInstrucciones() {
         showText("¡Instrucciones del juego!", getWidth() / 2, 100);
         showText("Usa las flechas para mover el submarino.", getWidth() / 2, 200);
         showText("Recoge la basura para acumular puntos.", getWidth() / 2, 250);
         showText("Evita los peces.", getWidth() / 2, 300);
         showText("Presiona cualquier tecla para comenzar.", getWidth() / 2, 500);
-        Greenfoot.delay(1); // Espera a que el jugador presione una tecla para continuar
-        removeObjects(getObjects(null)); // Remueve todos los objetos de la pantalla de instrucciones
     }
-    */
+
+    private void eliminarInstrucciones() {
+        showText("", getWidth() / 2, 100);
+        showText("", getWidth() / 2, 200);
+        showText("", getWidth() / 2, 250);
+        showText("", getWidth() / 2, 300);
+        showText("", getWidth() / 2, 500);
+    }
+
+    private void prepararMusica()
+    {
+        musicaFondo = new GreenfootSound("musica.mp3");
+        musicaFondo.playLoop();
+    }
+
+    public void act()
+    {
+        if (!instruccionesMostradas) {
+            mostrarInstrucciones();
+            Greenfoot.delay(300); // Pausa durante 5 segundos (300 frames a 60 fps)
+            eliminarInstrucciones();
+            instruccionesMostradas = true;
+        }
+    }
+
+    public void stopped()
+    {
+        musicaFondo.pause();
+    }
+
     private boolean distanciaMinimaEntrePezYBasura(int x, int y, int distanciaMinima)
     {
-        // Verifica la distancia entre el objeto "pez" y los objetos "basura" existentes
         for (Object obj : getObjects(basura1.class))
         {
             Actor basura = (Actor) obj;
@@ -82,20 +105,4 @@ public class MyWorld extends World
 
         return true;
     }
-
-    private void prepararMusica()
-    {
-        // Crea una instancia de GreenfootSound y carga el archivo de música
-        musicaFondo = new GreenfootSound("musica.mp3");
-
-        // Reproduce la música en bucle (para que se repita)
-        musicaFondo.playLoop();
-    }
-
-    public void stopped()
-    {
-        // Detiene la música cuando se detiene el mundo
-        musicaFondo.pause();
-    }
 }
-
