@@ -6,6 +6,7 @@ comment2.params=
 comment2.target=void\ prepare()
 comment3.params=x\ y\ distanciaMinima
 comment3.target=boolean\ distanciaMinimaEntrePezYBasura(int,\ int,\ int)
+comment3.text=\n\ \ \ \ private\ void\ mostrarInstrucciones()\ {\n\ \ \ \ \ \ \ \ showText("\u00A1Instrucciones\ del\ juego\!",\ getWidth()\ /\ 2,\ 100);\n\ \ \ \ \ \ \ \ showText("Usa\ las\ flechas\ para\ mover\ el\ submarino.",\ getWidth()\ /\ 2,\ 200);\n\ \ \ \ \ \ \ \ showText("Recoge\ la\ basura\ para\ acumular\ puntos.",\ getWidth()\ /\ 2,\ 250);\n\ \ \ \ \ \ \ \ showText("Evita\ los\ peces.",\ getWidth()\ /\ 2,\ 300);\n\ \ \ \ \ \ \ \ showText("Presiona\ cualquier\ tecla\ para\ comenzar.",\ getWidth()\ /\ 2,\ 500);\n\ \ \ \ \ \ \ \ Greenfoot.delay(1);\ //\ Espera\ a\ que\ el\ jugador\ presione\ una\ tecla\ para\ continuar\n\ \ \ \ \ \ \ \ removeObjects(getObjects(null));\ //\ Remueve\ todos\ los\ objetos\ de\ la\ pantalla\ de\ instrucciones\n\ \ \ \ }\n
 comment4.params=
 comment4.target=void\ prepararMusica()
 comment5.params=

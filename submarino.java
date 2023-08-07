@@ -6,13 +6,13 @@ public class submarino extends Actor {
         int nuevoAncho = imagen.getWidth() * 2;
         int nuevoAlto = imagen.getHeight() * 2;
         imagen.scale(60, 60);
-        setImage(imagen);
+        setImage(imagen); 
     }
 
     int contBasura = 0;
     int totalBasura = 10;
 
-    public void act() {
+    public void act(){
         moverSubmarino();
         recogerBasura();
         detectarPez();
@@ -50,13 +50,11 @@ public class submarino extends Actor {
             perdiste();
         }
     }
-
-    private void actualizarEtiqueta() {
-        GreenfootImage texto = new GreenfootImage("Cantidad de basura recogida: " + contBasura, 24, Color.BLACK, null);
+    private void actualizarEtiqueta(){
+        GreenfootImage texto = new GreenfootImage("Cantidad de basura recogida: " + contBasura, 30, Color.BLACK, null);
         getWorld().showText("", 100, 100);
         getWorld().showText("Cantidad de basura recogida " + contBasura, 200, 100);
     }
-
     private void perdiste() {
         Greenfoot.delay(100); // Agrega un pequeño retraso para que el jugador pueda leer el mensaje "Perdiste"
         Greenfoot.setWorld(new MyWorld()); // Reiniciar el juego creando un nuevo mundo

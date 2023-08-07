@@ -7,6 +7,7 @@ import greenfoot.*;
  */
 public class CONTADOR extends Actor 
 {
+
     // instance variables - replace the example below with your own
     private int x;
 
@@ -16,6 +17,7 @@ public class CONTADOR extends Actor
     public CONTADOR()
     {
     }
+   
 
     /**
      * An example of a method - replace this comment with your own

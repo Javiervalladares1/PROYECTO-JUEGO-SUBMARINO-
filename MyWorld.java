@@ -3,7 +3,8 @@ import greenfoot.*;
 public class MyWorld extends World
 {
     private GreenfootSound musicaFondo;
-
+    //private int tiempoInstrucciones = 1;
+    //private int contTiempo = 0;
     public MyWorld()
     {    
         super(800, 600, 1);
@@ -50,8 +51,19 @@ public class MyWorld extends World
         // Agrega la etiqueta de contador al mundo
         CONTADOR etiquetaContador = new CONTADOR();
         addObject(etiquetaContador, 500, 50);
+        //mostrarInstrucciones();
     }
-
+    /*
+    private void mostrarInstrucciones() {
+        showText("¡Instrucciones del juego!", getWidth() / 2, 100);
+        showText("Usa las flechas para mover el submarino.", getWidth() / 2, 200);
+        showText("Recoge la basura para acumular puntos.", getWidth() / 2, 250);
+        showText("Evita los peces.", getWidth() / 2, 300);
+        showText("Presiona cualquier tecla para comenzar.", getWidth() / 2, 500);
+        Greenfoot.delay(1); // Espera a que el jugador presione una tecla para continuar
+        removeObjects(getObjects(null)); // Remueve todos los objetos de la pantalla de instrucciones
+    }
+    */
     private boolean distanciaMinimaEntrePezYBasura(int x, int y, int distanciaMinima)
     {
         // Verifica la distancia entre el objeto "pez" y los objetos "basura" existentes
