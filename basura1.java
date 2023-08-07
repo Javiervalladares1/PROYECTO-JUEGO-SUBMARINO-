@@ -28,7 +28,7 @@ public class basura1 extends Actor
             cambiarDireccionY();
         }
 
-        setLocation(getX(), y + (1 * direccionY));
+        setLocation(getX(), y + (0 * direccionY));
     }
 
     private void cambiarDireccionY()
